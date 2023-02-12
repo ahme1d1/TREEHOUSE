@@ -1,0 +1,49 @@
+@import "./variables.scss";
+@import "./functions.scss";
+@import "./utils.scss";
+@import "./grid.scss";
+
+@import "./components/TheHeader.scss";
+@import "./components/TheFooter.scss";
+@import "./components/Btn.scss";
+@import "./components/AppImage.scss";
+@import "./components/Socials.scss";
+@import "./components/menuOverlay.scss";
+
+// Pages
+@import "./pages/index.scss";
+
+// libs
+@import "swiper/swiper-bundle.css";
+
+@import "./override.scss";
+
+html,
+body {
+  scroll-behavior: smooth;
+  ::-moz-selection {
+    background: $primary;
+  }
+
+  ::selection {
+    background: $primary;
+  }
+
+  font-family: $font-family-base;
+
+  font-size: 1rem;
+  overflow-x: hidden;
+}
+
+.theApp {
+  &-body {
+    padding-top: 7rem;
+    min-height: 50vh;
+    background-color: $body-bg;
+    color: $body-color;
+
+    @media (max-width: $md) {
+      padding-top: 5.5rem;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.header.headroom
+  .container 
+    .d-flex.align-items-center.justify-content-between
+      .header-logo 
+        a(href="#"): img.img-max(src="../static/images/Logo.png" alt="Logo")
+      .header-menu
+        a.d-block.d-md-none.header-bars.d-flex.align-items-center.justify-content-center#closeMenu: +SvgIcon('bars')
+        .d-none.d-md-flex.algin-items-center.justify-content-center
+          ul.header-links
+            li: a.fs-xs.text-gray-600(href="/") HOME
+            li: a.fs-xs.text-gray-600(href="#") ABOUT
+            li: a.fs-xs.text-gray-600(href="#") BLOG
+            li: a.fs-xs.text-gray-600(href="#") PORTFOLIO
+            li: a.fs-xs.text-gray-600(href="#") CONTACT  
+          
+.d-block
+  include ../components/menuOverlay

@@ -1,0 +1,212 @@
+extends ../layouts/default.pug
+
+block content
+  //- Intro Section
+  .intro
+    .swiper-container   
+      .swiper-wrapper  
+        -for(let i = 0; i < 3; i++)
+          .swiper-slide
+            .intro-item.text-white.text-center  
+              .intro-item__img  
+                .appImage.inViewJs(class="is-3-1")
+                  img(data-src="../static/images/intro-bg.webp" alt="intro image")
+              .intro-item__body
+                .container.h-100
+                  .row.justify-content-center.align-items-center.h-100
+                    .col-md-7
+                      h2.fs-xxxl.mb-sm CREATIVE DIGITAL SOLUTIONS
+                      p.mb-md.font-family-sub.text-gray-500.fs-md Proin iaculis purus consequat sem cure.
+                      button.btn.btn-primary.btn-lg VIEW PORTFOLIO
+
+  //- Services Section
+  .services.pt-xxl.pb-xl 
+    .container 
+      .text-center
+        h2.fs-xxl.mb-sm PROFESSIONAL SERVICES
+        p.mb-xl.fs-md-.text-gray-600 Proin iaculis purus consequat sem cure 
+      .row 
+        .col-sm-6.col-lg-4.mb-md.text-center.p-xs  
+          +SvgIcon('heart', 'services-icon')
+          h3.fs-lg.pt-sm.pb-xs BEAUTIFUL DESIGNS
+          p.fs-xs.font-family-sub.text-gray-600 Proin iaculis purus consequat sem cure 
+            | digni ssim. Donec porttitora entum suscipit 
+            | aenean rhoncus posuere odio in tincidunt.
+
+        .col-sm-6.col-lg-4.mb-md.text-center.p-xs  
+          +SvgIcon('iphone', 'services-icon')
+          h3.fs-lg.pt-sm.pb-xs RESPONSIVE WEB
+          p.fs-xs.font-family-sub.text-gray-600 Proin iaculis purus consequat sem cure 
+            | digni ssim. Donec porttitora entum suscipit 
+            | aenean rhoncus posuere odio in tincidunt.
+
+        .col-sm-6.col-lg-4.mb-md.text-center.p-xs  
+          +SvgIcon('graph-1', 'services-icon')
+          h3.fs-lg.pt-sm.pb-xs MARKETING TOOLS
+          p.fs-xs.font-family-sub.text-gray-600 Proin iaculis purus consequat sem cure 
+            | digni ssim. Donec porttitora entum suscipit 
+            | aenean rhoncus posuere odio in tincidunt.
+
+  //- Relax Section
+  .relex.bg-gray-400.text-white 
+    .container.container-fluid 
+      .row 
+        .col-lg-4 
+        .col-lg-8 
+          .relax-body 
+            .relax-body-img 
+              img(src="../static/images/settings.svg" alt="settings icon")
+
+            .relax-body-content
+              .row 
+                .col-lg-6 
+                  pre.fs-xxl.fw-bold.mb-sm
+                    | JUST RELAX #[span.text-primary &] 
+                    | LET US DO THE HEAVY LIFTING
+
+                  p.text-gray-500.fs-sm.font-family-sub.mb-md Proin iaculis purus consequat sem cure  digni ssim. Donec 
+                    |porttitora entum suscipit  aenean rhoncus posuere odio in tincidunt.
+
+                  .mb-lg 
+                    .d-flex.align-items-center.text-gray-500.mb-xs
+                      .relax-icon.d-flex.align-items-center.justify-content-center.me-xs.b-circle: +SvgIcon('checkmark')
+                      p.fs-sm.font-family-sub Initial Setup & Customizations
+
+                    .d-flex.align-items-center.text-gray-500.mb-xs
+                      .relax-icon.d-flex.align-items-center.justify-content-center.me-xs.b-circle: +SvgIcon('checkmark')
+                      p.fs-sm.font-family-sub Regular Updates
+
+                    .d-flex.align-items-center.text-gray-500.mb-xs
+                      .relax-icon.d-flex.align-items-center.justify-content-center.me-xs.b-circle: +SvgIcon('checkmark')
+                      p.fs-sm.font-family-sub Round The Clock Support
+
+                  button.btn.btn-primary.btn-lg LEARN MORE
+
+  //- Latest Project Section
+  .project.pt-xxl.pb-xxl 
+    .container.container-fluid 
+      .text-center 
+        h2.fs-xxl.mb-xs LATEST PROJECT
+        p.mb-xl.fs-md.text-gray-600 Proin iaculis purus consequat sem cure 
+      
+      .row 
+        .col-12.col-xl-6 
+          .project-content 
+            h3.fs-md.mb-sm DEVELOPING A FRAMEWORK
+            p.mb-md.fs-sm.text-gray-600.font-family-sub Proin iaculis purus consequat sem cure  digni ssim 
+              | donec porttitora entum suscipit  aenean rhoncus posuere 
+              | odio in tincidunt.
+            
+            .d-flex.align-items-center.mb-sm 
+              .d-flex.align-items-center.justify-content-center.project-icon.b-circle.me-sm.flex-shrink
+                +SvgIcon('basket')
+              div 
+                h3.fs-md E-Commerce Ready
+                p.fs-sm.font-family-sub.text-gray-600 Proin iaculis purus consequat sem cure  digni ssim.
+
+            .d-flex.align-items-center.mb-sm 
+              .d-flex.align-items-center.justify-content-center.project-icon.b-circle.me-sm.flex-shrink
+                +SvgIcon('labtop')
+              div 
+                h3.fs-md Powerful SEO Features
+                p.fs-sm.font-family-sub.text-gray-600 Proin iaculis purus consequat sem cure  digni ssim.
+
+            .d-flex.align-items-center.mb-sm 
+              .d-flex.align-items-center.justify-content-center.project-icon.b-circle.me-sm.flex-shrink
+                +SvgIcon('lock')
+              div 
+                h3.fs-md Secure Encryption
+                p.fs-sm.font-family-sub.text-gray-600 Proin iaculis purus consequat sem cure  digni ssim.
+
+            p.fs-sm.font-family-sub.text-gray-600.mb-sm Proin iaculis purus consequat sem cure  digni ssim donec 
+              |porttitora entum suscipit  aenean rhoncus posuere odio in.
+
+            button.btn.btn-transparent
+              .d-flex.align-items-center.justify-content-center 
+                span.me-xs VIEW DETAILS
+                +SvgIcon('arrow-right')
+
+        .col-12.col-xl-6.d-none.d-xl-block 
+          .d-flex.justify-content-end 
+            img.img-max(src="../static/images/product-1.webp" alt="product image")
+
+  //- Culture Section
+  .culture.pt-xxl.pb-xl.bg-gray-300 
+    .container  
+      .text-center 
+        h2.fs-xxl.mb-sm CULTURE & VALUES
+        p.mb-xl.fs-md.text-gray-600 Proin iaculis purus consequat sem cure 
+
+        .row 
+          .col-12.col-col-sm-6.col-md-4.mb-md.culture-box.p-xs.text-center 
+            .d-flex.justify-content-center
+              .d-flex.align-items-center.justify-content-center.culture-icon.b-circle.text-gray-600
+                +SvgIcon('music')
+            h3.fs-lg.pt-md.pb-sm WORK-LIFE BALANCE
+            p.fs-sm.font-family-sub.text-gray-600.mb-sm Proin iaculis purus consequat sem cure 
+              | digni ssim. Donec porttitora entum suscipit 
+              | aenean rhoncus posuere odio in tincidunt.
+          .col-12.col-col-sm-6.col-md-4.mb-md.culture-box.p-xs.text-center 
+            .d-flex.justify-content-center
+              .d-flex.align-items-center.justify-content-center.culture-icon.b-circle.text-gray-600
+                +SvgIcon('quality')
+            h3.fs-lg.pt-md.pb-sm QUALITY OVER QUANTITY
+            p.fs-sm.font-family-sub.text-gray-600.mb-sm Proin iaculis purus consequat sem cure 
+              | digni ssim. Donec porttitora entum suscipit 
+              | aenean rhoncus posuere odio in tincidunt.
+          .col-12.col-col-sm-6.col-md-4.mb-md.culture-box.p-xs.text-center 
+            .d-flex.justify-content-center
+              .d-flex.align-items-center.justify-content-center.culture-icon.b-circle.text-gray-600
+                +SvgIcon('star')
+            h3.fs-lg.pt-md.pb-sm DELIVER EXCELLENCE
+            p.fs-sm.font-family-sub.text-gray-600.mb-sm Proin iaculis purus consequat sem cure 
+              | digni ssim. Donec porttitora entum suscipit 
+              | aenean rhoncus posuere odio in tincidunt.
+  //- Our Awesome Section
+  .awesome.pt-xxl.pb-xl 
+    .container 
+      .text-center 
+        h2.fs-xxl.mb-sm OUR AWESOME CLIENTS
+        p.mb-xl.fs-md.text-gray-600 Proin iaculis purus consequat sem cure 
+      
+      .awesome-content.d-flex.align-items-center.justify-content-center.mb-lg
+        .awesome-picture.mb-sm.flex-shrink 
+          .appImage.inViewJs
+            img(data-src="../static/images/user-1.webp" alt="user image")
+
+        .awesome-box.mb-sm.bg-gray-300.text-center.p-md 
+          h3.fs-lg.text-gray-600.font-family-sub.mb-sm.fw-normal “ Proin iaculis purus consequat sem cure  digni ssim 
+            | donec porttitora entum suscipit aenean rhoncus. ” 
+          p.text-primary.font-family-sub.fs-md - Jamie Richardson, Founder of Cocoa Media
+
+      .awesome-content.d-flex.align-items-center.justify-content-center.mb-lg
+        .awesome-box.is-reverse.mb-sm.bg-gray-300.text-center.p-md 
+          h3.fs-lg.text-gray-600.font-family-sub.mb-sm.fw-normal “ Proin iaculis purus consequat sem cure  digni ssim 
+            | donec porttitora entum suscipit aenean rhoncus. ” 
+          p.text-primary.font-family-sub.fs-md - Jamie Richardson, Founder of Cocoa Media
+
+        .awesome-picture.mb-sm.flex-shrink 
+          .appImage.inViewJs
+            img(data-src="../static/images/user-1.webp" alt="user image")
+  //- Contact Section
+  .contact.bg-primary.pt-xl.pb-xl.text-white 
+    .container 
+      .text-center 
+        h3.fs-xxl.mb-md READY TO TALK ABOUT YOUR NEXT PROJECT?
+        button.btn.btn-white CONTACT US
+  //- Brands Section
+  .brand.pt-xl.pb-xl
+    .container 
+      .d-flex.align-items-center.justify-content-center.flex-wrap
+        .brand-img
+          .appImage.inViewJs(class="is-3-1")
+            img(data-src="../static/images/envato.png" alt="envato image")
+        .brand-img
+          .appImage.inViewJs(class="is-3-1")
+            img(data-src="../static/images/WordPress.png" alt="wordPress image")
+        .brand-img
+          .appImage.inViewJs(class="is-3-1")
+            img(data-src="../static/images/Microlancer.png" alt="microlancer image")
+        .brand-img
+          .appImage.inViewJs(class="is-3-1")
+            img(data-src="../static/images/Tuts.png" alt="tuts image")

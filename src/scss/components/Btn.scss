@@ -1,0 +1,43 @@
+.btn {
+  display: inline-block;
+  padding: 1rem 1.4rem;
+  border-radius: 3rem;
+  background-color: transparent;
+  border: 0.1rem solid transparent;
+  font-size: rem(14px);
+  font-weight: bold;
+  color: $white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &-primary {
+    background-color: $primary;
+    border-color: $primary;
+    &:hover {
+      color: $primary;
+      background-color: transparent;
+    }
+  }
+
+  &-white {
+    border: 0.20rem solid $white;
+    color: $white;
+    border-radius: 0.4rem;
+    font-size: rem(18px);
+    padding: 1rem 1.8rem;
+    &:hover {
+      background-color: $white;
+      color: $primary;
+    }
+  }
+
+  &-transparent {
+    color: $primary;
+    padding: 1rem 0rem;
+    font-size: 1rem;
+  }
+  
+  &-lg {
+    padding: 1.2rem 1.6rem;
+  }
+}

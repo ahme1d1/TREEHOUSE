@@ -1,0 +1,28 @@
+{
+  "name": "treehouse",
+  "version": "1.0.0",
+  "description": "Landing page",
+  "main": "index.js",
+  "author": "Robusta",
+  "private": true,
+  "scripts": {
+    "build": "parcel build ./src/pages/**/*.pug --public-url ./",
+    "dev": "parcel ./src/pages/**/*.pug -p 3333"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "postcss-rtl": "^1.7.3",
+    "pug": "^3.0.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "headroom.js": "^0.12.0",
+    "intersection-observer": "^0.12.0",
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-data-src": "^1.0.1",
+    "postcss-modules": "^3.2.2",
+    "sass": "^1.58.0",
+    "swiper": "^6.4.5"
+  }
+}

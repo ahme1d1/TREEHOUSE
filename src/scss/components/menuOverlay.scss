@@ -1,0 +1,96 @@
+.menuOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0rem;
+  right: -100%;
+  z-index: 99999;
+  transition: all 0.3s ease-in-out;
+  &-close {
+    display: flex;
+    justify-content: center;
+    .svgIcon {
+      width: 1.5rem !important;
+      height: 1.5rem !important;
+    }
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: rem(50px);
+      height: rem(50px);
+      border-radius: 50%;
+      cursor: pointer;
+      color: $white;
+      background-color: $primary;
+      border: 0.1rem solid transparent;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        background-color: transparent;
+        border-color: $primary;
+        color: $primary;
+      }
+    }
+  }
+  &-menuBG {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+    background-color: $primary;
+    opacity: 0.1;
+    transition: all 0.2s ease-in-out;
+  }
+  &-content {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    width: 20rem;
+    max-width: 100%;
+    padding: 4rem 2rem;
+    height: 100%;
+    background-color: $white;
+    box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    overflow-y: auto;
+    transition: all 0.5s ease-in-out;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $primary;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: $primary;
+    }
+    ul {
+      padding: 0rem;
+      margin: 0rem;
+      list-style-type: none;
+      li {
+        a {
+          display: block;
+          padding: 0.5rem 1rem;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  &.is-active {
+    right: 0%;
+    .menuOverlay {
+      &-menuBG {
+        border-radius: 0%;
+      }
+    }
+  }
+}

@@ -1,0 +1,236 @@
+// Spacing
+$sizeUnit: rem;
+$marginKey: "m";
+$paddingKey: "p";
+$separator: "-";
+
+$sizes: (
+  ("none", 0),
+  ("xxs", 10px),
+  ("xs", 14px),
+  ("sm", 20px),
+  ("md", 30px),
+  ("lg", 40px),
+  ("xl", 80px),
+  ("xxl", 120px)
+);
+
+$positions: (
+  ("t", "top"),
+  ("s", "inline-start"),
+  ("b", "bottom"),
+  ("e", "inline-end")
+);
+
+@function sizeValue($key, $value) {
+  @return if($key== "none", 0, $value + $sizeUnit);
+}
+
+@each $size in $sizes {
+  $sizeKey: nth($size, 1);
+  $sizeValue: nth($size, 2);
+
+  .#{$marginKey}#{$separator}#{$sizeKey} {
+    margin: $sizeValue;
+  }
+
+  .#{$paddingKey}#{$separator}#{$sizeKey} {
+    padding: $sizeValue;
+  }
+
+  @each $position in $positions {
+    $posKey: nth($position, 1);
+    $posValue: nth($position, 2);
+
+    .#{$marginKey}#{$posKey}#{$separator}#{$sizeKey} {
+      margin-#{$posValue}: $sizeValue;
+    }
+
+    .#{$paddingKey}#{$posKey}#{$separator}#{$sizeKey} {
+      padding-#{$posValue}: $sizeValue;
+    }
+  }
+}
+
+.fs {
+  &-xxxl {
+    font-size: rem(60px);
+    @media (max-width: $lg) {
+      font-size: rem(50px);
+    }
+    @media (max-width: $md) {
+      font-size: rem(40px);
+    }
+    @media (max-width: $sm) {
+      font-size: rem(35px);
+    }
+  }
+
+  &-xxl {
+    font-size: rem(40px);
+    @media (max-width: $md) {
+      font-size: rem(35px);
+    }
+
+    @media (max-width: $sm) {
+      font-size: rem(30px);
+    }
+  }
+
+  &-xl {
+    font-size: rem(30px);
+    @media (max-width: $md) {
+      font-size: rem(28px);
+    }
+  }
+  &-lg {
+    font-size: rem(24px);
+    @media (max-width: $md) {
+      font-size: rem(20px);
+    }
+  }
+  &-md {
+    font-size: rem(18px);
+    @media (max-width: $md) {
+      font-size: rem(17px);
+    }
+  }
+  &-sm {
+    font-size: rem(16px);
+    @media (max-width: $md) {
+      font-size: rem(15px);
+    }
+  }
+  &-xs {
+    font-size: rem(14px);
+  }
+  &-xxs {
+    font-size: rem(10px);
+  }
+}
+
+.fw {
+  &-lx {
+    font-weight: 200;
+  }
+  &-light {
+    font-weight: 300;
+  }
+  &-normal {
+    font-weight: 400;
+  }
+  &-medium {
+    font-weight: 500;
+  }
+  &-semiBold {
+    font-weight: 600;
+  }
+  &-bold {
+    font-weight: 700;
+  }
+}
+
+.svgIcon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.text {
+  &-primary {
+    color: $primary;
+  }
+  &-secondary {
+    color: $secondary;
+  }
+  &-dark {
+    color: $body-color;
+  }
+  &-white {
+    color: $white;
+  }
+  &-gray {
+    &-300 {
+      color: $gray-300;
+    }
+    &-400 {
+      color: $gray-400;
+    }
+    &-500 {
+      color: $gray-500;
+    }
+    &-600 {
+      color: $gray-600;
+    }
+    &-700 {
+      color: $gray-700;
+    }
+  }
+  &-center {
+    text-align: center;
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+}
+
+.bg {
+  &-primary {
+    background-color: $primary;
+  }
+  &-secondary {
+    background-color: $secondary;
+  }
+  &-dark {
+    background-color: $body-color;
+  }
+  &-gray {
+    &-300 {
+      background-color: $gray-300;
+    }
+    &-400 {
+      background-color: $gray-400;
+    }
+    &-500 {
+      background-color: $gray-500;
+    }
+    &-600 {
+      background-color: $gray-600;
+    }
+    &-700 {
+      background-color: $gray-700;
+    }
+  }
+}
+
+.h {
+  &-100 {
+    height: 100%;
+  }
+}
+
+.font {
+  &-family {
+    &-base {
+      font-family: $font-family-base;
+    }
+    &-sub {
+      font-family: $font-family-sub;
+    }
+  }
+}
+
+.b {
+  &-circle {
+    border-radius: 50%;
+  }
+}
+
+.img-max {
+  display: block;
+  max-width: 100%;
+}

@@ -1,0 +1,64 @@
+.footer
+    .footer-top.text-white.pt-xl.pb-xl.bg-gray-700
+        .container
+            .row 
+                .col-md-4.col-12.p-xs 
+                    h3.fs-md.mb-sm CONTACT US
+                    ul 
+                        li.mb-xs: a(href="#").fs-sm.text-white
+                            +SvgIcon('location')
+                            span.ms-xs 55 Main St.Toronto, ON M1H 3A5
+                        li.mb-xs: a(href="tel: (416) 555-5252").fs-sm.text-white
+                            +SvgIcon('iphone')
+                            span.ms-xs (416) 555-5252
+                        li.mb-xs: a(href="mailto: hello@treehouse.com").fs-sm.text-white
+                            +SvgIcon('email')
+                            span.ms-xs hello@treehouse.com
+
+                .col-md-4.col-12.p-xs 
+                    h3.fs-md.mb-sm LATEST POSTS
+                    ul 
+                        li.mb-xs: a(href="#").fs-sm.text-white
+                            +SvgIcon('newsCard')
+                            span.ms-xs Made With Love In Toronto
+                        li.mb-xs: a(href="#").fs-sm.text-white
+                            +SvgIcon('photo')
+                            span.ms-xs Startup News & Emerging Tech
+                        li.mb-xs: a(href="#").fs-sm.text-white
+                            +SvgIcon('newsCard')
+                            span.ms-xs Bitcoin Will Soon Rule The World
+                        li.mb-xs: a(href="#").fs-sm.text-white
+                            +SvgIcon('newsCard')
+                            span.ms-xs MWearable Technology On The Rise
+                        li.mb-xs: a(href="#").fs-sm.text-white
+                            +SvgIcon('media')
+                            span.ms-xs Learn Web Design In 30 Days!
+                
+                .col-md-4.col-12.p-xs 
+                    h3.fs-md.mb-sm LATEST TWEETS
+                    ul.remove
+                        li.mb-xs: a(href="#").fs-sm.text-white
+                            +SvgIcon('twitter-b')
+                            .ms-xs
+                                span Confucius: Life is really simple, 
+                                    br
+                                    | but we insist on making it
+                                    br
+                                    | complicated. 
+                                span.d-block.fw-bold #famousquotes
+                                span.d-block.fw-light.fs-xs 8 mins ago
+                        li.mb-xs: a(href="#").fs-sm.text-white
+                            +SvgIcon('twitter-b')
+                            .ms-xs
+                                span Grab the Free Treehouse web
+                                    br
+                                    | template at FreebiesXpress! 
+                                span.d-block.fw-bold #freebies #templates
+                                span.d-block.fw-light.fs-xs 2 days ago
+    .footer-bottom.pt-sm.pb-sm  
+        .container  
+            .row.align-items-center.pt-xs.pb-xs 
+                .col-md-4.col-12.pb-xs
+                    p.fs-xs © Copyright 2014 FreebiesXpress.com
+                .col-md-4.col-12
+                    include ./socials.pug

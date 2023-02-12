@@ -1,0 +1,32 @@
+.footer {
+  ul {
+    padding: 0rem;
+    margin: 0rem;
+    list-style: none;
+    li {
+      a {
+        font-family: $font-family-sub;
+        display: flex;
+        align-items: center;
+      }
+    }
+    &.remove {
+      li {
+        a {
+          align-items: unset;
+        }
+      }
+    }
+  }
+
+  .svgIcon {
+    width: 1.4rem !important;
+    height: 1.4rem !important;
+  }
+
+  &-bottom {
+    @media (max-width: $md) {
+      text-align: center;
+    }
+  }
+}

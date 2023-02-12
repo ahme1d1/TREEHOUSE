@@ -1,0 +1,161 @@
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+$grid-bp-sm: 576;
+$grid-bp-md: 768;
+$grid-bp-lg: 992;
+$grid-bp-xl: 1200;
+$grid-cols: 12;
+
+$map-grid-props: (
+  "": 0,
+  "-sm": $grid-bp-sm,
+  "-md": $grid-bp-md,
+  "-lg": $grid-bp-lg,
+  "-xl": $grid-bp-xl,
+);
+
+@mixin create-mq($breakpoint, $min-or-max) {
+  @if ($breakpoint == 0) {
+    @content;
+  } @else {
+    @media screen and (#{$min-or-max}-width:calc($breakpoint *1px)) {
+      @content;
+    }
+  }
+}
+
+@mixin create-col-classes($modifier, $grid-cols, $breakpoint) {
+  @include create-mq($breakpoint, "min") {
+    .col#{$modifier}-offset-0 {
+      margin-left: 0;
+    }
+    @for $i from 1 through $grid-cols {
+      .col#{$modifier}-#{$i} {
+        flex-basis: calc(100 / ($grid-cols / $i)) * 1%;
+      }
+      .col#{$modifier}-offset-#{$i} {
+        margin-left: calc(100 / ($grid-cols / $i)) * 1%;
+      }
+    }
+  }
+}
+
+@each $modifier, $breakpoint in $map-grid-props {
+  @if ($modifier == "") {
+    $modifier: "-xs";
+  }
+  @include create-mq($breakpoint - 1, "max") {
+    .hidden#{$modifier}-down {
+      display: none !important;
+    }
+  }
+  @include create-mq($breakpoint, "min") {
+    .hidden#{$modifier}-up {
+      display: none !important;
+    }
+  }
+}
+
+.container {
+  max-width: $grid-bp-xl * 1px;
+  margin: 0 auto;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+  &-fluid {
+    margin: 0;
+    padding: 0rem;
+    max-width: 100%;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  @each $modifier, $breakpoint in $map-grid-props {
+    @include create-col-classes($modifier, $grid-cols, $breakpoint);
+  }
+}
+
+$displays: (
+  none: none,
+  inline: inline,
+  inline-block: inline-block,
+  block: block,
+  table: table,
+  table-row: table-row,
+  table-cell: table-cell,
+  flex: flex,
+  inline-flex: inline-flex,
+);
+
+@each $name, $value in $displays {
+  .d-#{$name} {
+    display: $value;
+  }
+
+  @each $breakpointName, $breakpointValue in $breakpoints {
+    @media (min-width: $breakpointValue) {
+      .d-#{$breakpointName}-#{$name} {
+        display: $value !important;
+      }
+    }
+  }
+}
+
+$flex: (
+  wrap: wrap,
+  nowrap: nowrap,
+  shrink: 0,
+);
+
+@each $name, $value in $flex {
+  .flex-#{$name} {
+    flex-#{$name}: $value;
+  }
+
+  @each $breakpointName, $breakpointValue in $breakpoints {
+    @media (min-width: $breakpointValue) {
+      .flex-#{$breakpointName}-#{$name} {
+        flex-#{$name}: $value !important;
+      }
+    }
+  }
+}
+
+
+.justify {
+  &-content {
+    &-between {
+      justify-content: space-between;
+    }
+    &-center {
+      justify-content: center;
+    }
+    &-start {
+      justify-content: flex-start;
+    }
+    &-end {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.align {
+  &-items {
+    &-center {
+      align-items: center;
+    }
+    &-start {
+      align-items: flex-start;
+    }
+    &-end {
+      align-items: flex-end;
+    }
+  }
+}
